@@ -175,11 +175,23 @@ function checkGuess() {
                rightGuess[letterPosition] = "#";
           }
 
-          if (document.getElementById(currentGuess[i]).style.backgroundColor != colors['green']) {
-               document.getElementById(currentGuess[i]).style.backgroundColor = letterColor;
-          }
-
           box.style.backgroundColor = letterColor;
+
+          if (letterColor === colors['black']) {
+               if (document.getElementById(currentGuess[i]).style.backgroundColor != colors['black'] && document.getElementById(currentGuess[i]).style.backgroundColor != colors['yellow'] && document.getElementById(currentGuess[i]).style.backgroundColor != colors['green']) {
+                    document.getElementById(currentGuess[i]).style.backgroundColor = letterColor;
+               }
+          }
+          if (letterColor === colors['yellow']) {
+               if (document.getElementById(currentGuess[i]).style.backgroundColor != colors['yellow'] && document.getElementById(currentGuess[i]).style.backgroundColor != colors['green']) {
+                    document.getElementById(currentGuess[i]).style.backgroundColor = letterColor;
+               }
+          }
+          if (letterColor === colors['green']) {
+               if (document.getElementById(currentGuess[i]).style.backgroundColor != colors['green']) {
+                    document.getElementById(currentGuess[i]).style.backgroundColor = letterColor;
+               }
+          }
      }
 
      if (guessString === rightGuessString) {
